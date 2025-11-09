@@ -1,3 +1,1 @@
-I'm going to attempt making something without a tutorial.
-
-Giing to do this until I get frustrated, then going to go back on the course.
+Generates a random prompt from a selection and is used for journalling.
