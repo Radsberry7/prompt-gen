@@ -1,5 +1,14 @@
+.gen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: auto;
+}
+
 #quoteBox{
     background-color: beige;
-    padding: 8px;
-
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
 }

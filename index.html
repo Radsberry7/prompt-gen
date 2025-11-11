@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Prompt Generator</h1>
-    <div id="quoteBox"></div>
-    <button id="newQuoteBtn">New Prompt</button>
-    <button id="reflectionBtn">Reflection Prompt</button>
+    <div class="gen">
+        <h1>Journal Prompts</h1>
+        <div id="quoteBox"></div>
+        <label for="promptTypes">Choose a prompt type</label>
+
+        <select id="promptTypes">
+            <option value="reflection">Reflection</option>
+            <option value="mindset">Mindset</option>
+            <option value="gratitude">Gratitude</option>
+            <option value="shadowWork">Shadow-work</option>
+        </select>
+        <div id="genBtns">
+            <button id="newQuoteBtn">New Prompt</button>
+            <button id="reflectionBtn">Reflection Prompt</button>
+
+        </div>
+    </div>
     <script src="./script.js" defer></script>
 </body>
 </html>
