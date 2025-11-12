@@ -1,14 +1,7 @@
 // select the quotebox
 const quoteBox = document.getElementById("quoteBox");
 
-// list of prompts
-const prompts = [
-    "Write about a fun time in your childhood.",
-    "Describe what you are feeling today.",
-    "List 3 things you are grateful for.",
-    "Write about 3 things you want to do for the year.",
-    "Talk to me as if I was your protege."
-];
+// list of prompts in their types
 
 const reflectionPrompts = [
     "What stood out to me today, and why?",
@@ -142,18 +135,6 @@ const shadowPrompts = [
     "What would happen if I allowed myself to be fully honest today?",
 ]
 
-//function that returns a random prompt
-function randomPrompt() {
-    const index = Math.floor(Math.random() * prompts.length);
-    //in the id=quoteBox, change the text for the prompts!;
-    quoteBox.textContent = prompts[index];
-}
-//function that selects a random prompt from REFLECTIONPROMPTS
-function reflection () {
-    const index = Math.floor(Math.random() * reflectionPrompts.length);
-    quoteBox.textContent = reflectionPrompts[index];
-    console.log(index);
-}
 
 //press the button then generate according to what's in the promptypes option.
 const promptDropdown = document.getElementById('promptDropdown'); // select the promptSelect element
@@ -163,25 +144,25 @@ const selectedDropdown = promptDropdown.value; //get the value of the selected o
 function generatePrompt (){
     if (promptDropdown.value === "reflection") {
         const index = Math.floor(Math.random() * reflectionPrompts.length);
-        quoteBox.textContent = reflectionPrompts[index];
+        quoteBox.textContent = "Reflection Prompt: " + reflectionPrompts[index];
         console.log(index);    
         console.log("reflection option pressed"); 
     }
     else if (promptDropdown.value === "mindset") {
         const index = Math.floor(Math.random() * mindsetPrompts.length);
-        quoteBox.textContent = mindsetPrompts[index];
+        quoteBox.textContent = "Mindset Prompt: " +mindsetPrompts[index];
         console.log(index);    
         console.log("Mindset option pressed"); 
     }
     else if (promptDropdown.value === "gratitude") {
         const index = Math.floor(Math.random() * gratitudePrompts.length);
-        quoteBox.textContent = gratitudePrompts[index];
+        quoteBox.textContent = "Gratitude Prompt: " +gratitudePrompts[index];
         console.log(index);    
         console.log("Gratitude option pressed"); 
     }
     else if (promptDropdown.value === "shadowWork") {
         const index = Math.floor(Math.random() * shadowPrompts.length);
-        quoteBox.textContent = shadowPrompts[index];
+        quoteBox.textContent = "Shadow Work Prompt: " + shadowPrompts[index];
         console.log(index);    
         console.log("Shadow Work option pressed"); 
     }
@@ -191,16 +172,17 @@ function generatePrompt (){
     }
 }
 
+function generateRandom () {
 
-//select the button
-const newQuoteBtn = document.getElementById('newQuoteBtn');
-const reflectionBtn = document.getElementById('reflectionBtn');
+}
+
+//select the buttons
 const genBtn = document.getElementById('genBtn');
+const randomBtn = document.getElementById('randomBtn');
 
 //add event listener
-newQuoteBtn.addEventListener("click", randomPrompt);
-reflectionBtn.addEventListener("click", reflection);
 genBtn.addEventListener("click", generatePrompt);
+randomBtn.addEventListener("click", generateRandom);
 
 
 
