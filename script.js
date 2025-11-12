@@ -135,6 +135,8 @@ const shadowPrompts = [
     "What would happen if I allowed myself to be fully honest today?",
 ]
 
+// ALL THE PROMPTS ARRAYS!
+const allPrompts = reflectionPrompts.concat(mindsetPrompts, gratitudePrompts, shadowPrompts);
 
 //press the button then generate according to what's in the promptypes option.
 const promptDropdown = document.getElementById('promptDropdown'); // select the promptSelect element
@@ -173,7 +175,10 @@ function generatePrompt (){
 }
 
 function generateRandom () {
-
+        const index = Math.floor(Math.random() * allPrompts.length);
+        quoteBox.textContent = allPrompts[index];
+        console.log(index);    
+        console.log("Random Button has been pressed"); 
 }
 
 //select the buttons
