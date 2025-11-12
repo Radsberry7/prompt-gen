@@ -56,13 +56,41 @@ function reflection () {
     console.log(index);
 }
 
+//press the button then generate according to what's in the promptypes option.
+const promptDropdown = document.getElementById('promptDropdown'); // select the promptSelect element
+const selectedDropdown = promptDropdown.value; //get the value of the selected option
+
+
+function generate (){
+    if (promptDropdown.value === "reflection") {
+        const index = Math.floor(Math.random() * reflectionPrompts.length);
+        quoteBox.textContent = reflectionPrompts[index];
+        console.log(index);    
+        console.log("reflection option pressed"); 
+    }
+    else if (promptDropdown.value === "mindset") {
+        const index = Math.floor(Math.random() * prompts.length);
+        quoteBox.textContent = prompts[index];
+        console.log(index);    
+        console.log("prompts option pressed"); 
+    }
+    else {
+        quoteBox.textContent = "Please select a prompt type.";
+        console.log("No prompt type selected.");
+    }
+}
+
+
 //select the button
 const newQuoteBtn = document.getElementById('newQuoteBtn');
 const reflectionBtn = document.getElementById('reflectionBtn');
+const genBtn = document.getElementById('genBtn');
 
 //add event listener
 newQuoteBtn.addEventListener("click", randomPrompt);
 reflectionBtn.addEventListener("click", reflection);
+genBtn.addEventListener("click", generate);
+
 
 
 
