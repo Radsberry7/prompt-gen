@@ -1,5 +1,5 @@
-// select the quotebox
-const quoteBox = document.getElementById("quoteBox");
+// Add the quoteField into the script
+const quoteField = document.getElementById("quoteField");
 
 // list of prompts in their types
 
@@ -141,43 +141,46 @@ const allPrompts = reflectionPrompts.concat(mindsetPrompts, gratitudePrompts, sh
 //press the button then generate according to what's in the promptypes option.
 const promptDropdown = document.getElementById('promptDropdown'); // select the promptSelect element
 const selectedDropdown = promptDropdown.value; //get the value of the selected option
-const promptBox = document.getElementById('promptBox');
+const promptTypeTitle = document.getElementById('promptTypeTitle');
 
 function generatePrompt (){
     if (promptDropdown.value === "reflection") {
         const index = Math.floor(Math.random() * reflectionPrompts.length);
-        quoteBox.textContent = reflectionPrompts[index];
-        promptBox.textContent = "Reflection Prompt";
+        quoteField.textContent = reflectionPrompts[index];
+        promptTypeTitle.textContent = "Reflection Prompt";
         console.log(index);    
         console.log("reflection option pressed"); 
     }
     else if (promptDropdown.value === "mindset") {
         const index = Math.floor(Math.random() * mindsetPrompts.length);
-        quoteBox.textContent = "Mindset Prompt: " +mindsetPrompts[index];
+        quoteField.textContent = mindsetPrompts[index];
+        promptTypeTitle.textContent = "Mindset Prompt";
         console.log(index);    
         console.log("Mindset option pressed"); 
     }
     else if (promptDropdown.value === "gratitude") {
         const index = Math.floor(Math.random() * gratitudePrompts.length);
-        quoteBox.textContent = "Gratitude Prompt: " +gratitudePrompts[index];
+        quoteField.textContent = gratitudePrompts[index];
+        promptTypeTitle.textContent = "Gratitude Prompt";
         console.log(index);    
         console.log("Gratitude option pressed"); 
     }
     else if (promptDropdown.value === "shadowWork") {
         const index = Math.floor(Math.random() * shadowPrompts.length);
-        quoteBox.textContent = "Shadow Work Prompt: " + shadowPrompts[index];
+        quoteField.textContent =  shadowPrompts[index];
+        promptTypeTitle.textContent = "Shadow Work Prompt";
         console.log(index);    
         console.log("Shadow Work option pressed"); 
     }
     else {
-        quoteBox.textContent = "Please select a prompt type.";
+        quoteField.textContent = "Please select a prompt type.";
         console.log("No prompt type selected.");
     }
 }
 
 function generateRandom () {
         const index = Math.floor(Math.random() * allPrompts.length);
-        quoteBox.textContent = allPrompts[index];
+        quoteField.textContent = allPrompts[index];
         console.log(index);    
         console.log("Random Button has been pressed"); 
 }
