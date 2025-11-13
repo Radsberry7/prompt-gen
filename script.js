@@ -141,12 +141,13 @@ const allPrompts = reflectionPrompts.concat(mindsetPrompts, gratitudePrompts, sh
 //press the button then generate according to what's in the promptypes option.
 const promptDropdown = document.getElementById('promptDropdown'); // select the promptSelect element
 const selectedDropdown = promptDropdown.value; //get the value of the selected option
-
+const promptBox = document.getElementById('promptBox');
 
 function generatePrompt (){
     if (promptDropdown.value === "reflection") {
         const index = Math.floor(Math.random() * reflectionPrompts.length);
-        quoteBox.textContent = "Reflection Prompt: " + reflectionPrompts[index];
+        quoteBox.textContent = reflectionPrompts[index];
+        promptBox.textContent = "Reflection Prompt";
         console.log(index);    
         console.log("reflection option pressed"); 
     }
@@ -188,7 +189,3 @@ const randomBtn = document.getElementById('randomBtn');
 //add event listener
 genBtn.addEventListener("click", generatePrompt);
 randomBtn.addEventListener("click", generateRandom);
-
-
-
-

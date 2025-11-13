@@ -9,19 +9,20 @@
 <body>
     <div class="gen">
         <h1>Journal Prompts</h1>
-        <div id="quoteBox"></div>
-        <label for="promptTypes">Choose a prompt type:</label>
-
-        <select id="promptDropdown">
-            <option value="reflection">Reflection</option>
-            <option value="mindset">Mindset</option>
-            <option value="gratitude">Gratitude</option>
-            <option value="shadowWork">Shadow-work</option>
-        </select>
-        <div id="buttons">
-            <button id="genBtn">Generate</button>
-            <button id="randomBtn">Randomize</button>
-
+        <div class="quoteCard">
+            <div id="promptBox">Prompt Type </div>
+            <div id="quoteBox">Generate a journal prompt</div>
+            <label for="promptTypes">Choose a prompt type:</label>
+            <select id="promptDropdown">
+                <option value="reflection">Reflection</option>
+                <option value="mindset">Mindset</option>
+                <option value="gratitude">Gratitude</option>
+                <option value="shadowWork">Shadow-work</option>
+            </select>
+            <div id="buttons">
+                <button id="genBtn">Generate</button>
+                <button id="randomBtn">Randomize</button>
+            </div>
         </div>
     </div>
     <script src="./script.js" defer></script>
